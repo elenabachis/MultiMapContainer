@@ -1,0 +1,23 @@
+subalgorithm unionMultiMaps(MultiMap &map1, MultiMap &map2) is:
+//pre:map1, map2, result sind Objekten von Typ Multimap,
+//post:
+
+for i<- 0, map1.capacity,1 then
+	if map1.elements[i].key!=NULL_TVALUE then
+              for j<-0,map1.elements[i].size,1 then
+                     result.add(map1.elements[i].key, map1.elements[i].values[j])
+	      end-for
+        end-if
+end-for
+
+for i<- 0, map2.capacity,1 then
+	if map2.elements[i].key!=NULL_TVALUE then
+              for j<-0,map2.elements[i].size,1 then
+                     result.add(map1.elements[i].key, map2.elements[i].values[j])
+	      end-for
+        end-if
+end-for
+
+return result
+
+end_subalgorithm
